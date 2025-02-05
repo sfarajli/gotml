@@ -2,7 +2,7 @@
 
 PREFIX ?= /usr/local
 
-gotml:
+gotml: main.go
 	go build
 
 test: gotml
