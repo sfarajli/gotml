@@ -12,7 +12,7 @@ install: gotml
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f $< ${DESTDIR}${PREFIX}/bin
 
-unistall:
+uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/gotml
 
 clean:
