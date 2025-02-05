@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"github.com/gomarkdown/markdown"
-	// "github.com/gomarkdown/markdown/ast"
 	"github.com/gomarkdown/markdown/html"
 	"github.com/gomarkdown/markdown/parser"
+	"os"
 )
 
 
