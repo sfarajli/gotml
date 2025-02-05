@@ -24,6 +24,12 @@ func mdToHTML(md []byte) []byte {
 }
 
 func main() {
+	/* TODO: 
+	* argc == 1; read from stdin
+	* argc == 2; read from argv[1]
+	* else error exit
+	*/
+
 	argv := os.Args;
 	argc := len(argv);
 	progname := argv[0]
@@ -33,7 +39,11 @@ func main() {
 	}
 	path := argv[1]
 
-	file, _ := os.ReadFile(path)
+	file, err := os.ReadFile(path)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%s: error: failed to read file: %s\n", progname, err)
+		os.Exit(1)
+	}
 
 	md := []byte(file)
 	html := mdToHTML(md)
